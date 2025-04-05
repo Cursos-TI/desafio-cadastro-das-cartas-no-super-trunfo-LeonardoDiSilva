@@ -14,13 +14,13 @@ int main(){
     /// Entrada de dados da primeira carta
     printf("--Cadastro da Primeira Carta--\n");
     printf("Digite o Estado (A-H): \n");
-    scanf(" %c", &Estado1); /// Espaço antes do %c evita problemas com a leitura dos especificadores
+    scanf(" %c", &Estado1); 
 
     printf("Digite o Código da Carta (ex: H04): \n");
     scanf(" %s", &Codigo1);
 
     printf("Digite o Nome da Cidade: \n");
-    scanf(" %s", &Cidade1);
+    scanf(" %[^\n]", &Cidade1);
 
     printf("Digite a População: \n");
     scanf(" %d", &População1);
@@ -45,8 +45,8 @@ int main(){
     scanf(" %s", &Codigo2);
 
     printf("Digite o Nome da Cidade: \n");
-    scanf(" %s", &Cidade2);  
-    
+    scanf(" %[^\n]", &Cidade2);
+
     printf("Digite a População: \n");
     scanf(" %d", &População2);
 
@@ -59,6 +59,12 @@ int main(){
     printf("Digite o Número de Pontos Turísticos: \n");
     scanf(" %d", &Turisticos2);
 
+    float PerCapta1 = PIB1 / População1;
+    float DensiPop1 = População1 / Área1;
+
+    float PerCapta2 = PIB2 / População2;
+    float DensiPop2 = População2 / Área2;
+
     printf("\n");
 
     /// Exibição das informações introduzidas
@@ -70,6 +76,9 @@ int main(){
     printf("Área: %.2f\n", Área1);
     printf("PIB: %.2f\n", PIB1);
     printf("Quantidade de Pontos Turísticos: %d\n", Turisticos1);
+    printf("Densidade populacional: %.2f\n", DensiPop1);
+    printf("Pib per Capta: %.2f\n", PerCapta1);
+
 
     printf("\n");
 
@@ -81,7 +90,8 @@ int main(){
     printf("Área: %.2f\n", Área2);
     printf("PIB: %.2f\n", PIB2);
     printf("Quantidade de Pontos Turísticos: %d\n", Turisticos2);
+    printf("Densidade populacional: %.2f\n", DensiPop2);
+    printf("Pib per Capta: %.2f\n", PerCapta2);
 
     return 0;
-
 }
