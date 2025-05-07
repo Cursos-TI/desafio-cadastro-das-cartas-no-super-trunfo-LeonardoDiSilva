@@ -18,7 +18,7 @@ int main(){
     printf("Digite o Estado (A-H): \n");
     scanf(" %c", &Estado1); 
 
-    printf("Digite o Código da Carta (ex: H04): \n");
+    printf("Digite o Código da Carta (ex: H04): \n"); 
     scanf(" %s", &Codigo1);
 
     printf("Digite o Nome da Cidade: \n");
@@ -61,15 +61,16 @@ int main(){
     printf("Digite o Número de Pontos Turísticos: \n");
     scanf(" %d", &Turisticos2);
 
+    /// Calculoos de Pib per Capta e Densidade populacional
     float PerCapta1 = PIB1 / População1;
     float DensiPop1 = População1 / Área1;
 
-    float PerCapta2 = PIB2 / População2;
-    float DensiPop2 = População2 / Área2;
+    float PerCapta2 = (float) PIB2 / População2;
+    float DensiPop2 = (float) População2 / Área2;
 
     /// DensiPopIn: Densidade populacional ao contrario, requisito do Super Poder
-    float DensiPopIn1 = Área1 / DensiPop1;
-    float DensiPopIn2 = Área2 / DensiPop2;
+    float DensiPopIn1 = Área1 / População1;
+    float DensiPopIn2 = Área2 / População2;
 
 
     float SuperPoder1 = (População1 + Área1 + PIB1 + Turisticos1 + PerCapta1 + DensiPopIn1);
@@ -104,7 +105,7 @@ int main(){
     printf("Pib per Capta: %.2f\n", PerCapta2);
 
     printf("\n");
-    
+    /// Comparação das cartas
     printf("--Comparação de Cartas--\n");
     printf("População: Carta 1 Venceu %d\n", População1 > População2);
     printf("Área: Carta 1 Venceu %d\n", Área1 > Área2);
@@ -113,6 +114,15 @@ int main(){
     printf("Densidade Populacional: Carta 1 Venceu %d\n", DensiPop1 > DensiPop2);
     printf("PIB per Capita: Carta 1 Venceu %d\n", PerCapta1 > PerCapta2);
     printf("Super Poder: Carta 1 Venceu %d\n", SuperPoder1 > SuperPoder2);
+
+    printf("\n");
+
+    /// Comparação do atributo escolhido (PibperCapta)
+    printf("A carta vencedora com maior Pib per Capta é: \n");
+    if (PerCapta1 > PerCapta2)
+    {printf("%s venceu com o maior Pib per Capta \n", Cidade1);}
+    else 
+    {printf("%s venceu com o maior Pib per Capta \n", Cidade2);}
 
     return 0;
 }
